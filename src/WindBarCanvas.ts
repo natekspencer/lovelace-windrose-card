@@ -109,7 +109,8 @@ export class WindBarCanvas {
             canvasContext.textAlign = 'center';
             canvasContext.fillStyle = 'black';
             if (speedRangePercentages[i] > 0) {
-                canvasContext.fillText(`${Math.round(speedRangePercentages[i])}%`, this.config.posX + (this.config.height / 2), posY + (length / 2));
+                const val = Math.round(speedRangePercentages[i])
+                canvasContext.fillText(`${val == 0 ? '<1' : val}%`, this.config.posX + (this.config.height / 2), posY + (length / 2));
             }
             canvasContext.stroke();
 
@@ -172,7 +173,8 @@ export class WindBarCanvas {
             canvasContext.textAlign = 'center';
             canvasContext.fillStyle = 'black';
             if (speedRangePercentages[i] > 0) {
-                canvasContext.fillText(`${Math.round(speedRangePercentages[i])}%`, posX + (length / 2), this.config.posY + 2);
+                const val = Math.round(speedRangePercentages[i])
+                canvasContext.fillText(`${val == 0 ? '<1' : val}%`, posX + (length / 2), this.config.posY + 2);
             }
             canvasContext.stroke();
 
